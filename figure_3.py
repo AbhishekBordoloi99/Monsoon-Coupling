@@ -82,19 +82,19 @@ def station_analysis():
         for j in range(0,2):
             tmp=[]
             tmp.append(tpw.sel(time=str(i)).tpw.values[j,0:730])
-            AFC_clm.append(np.where((np.array(tmp, dtype=float) > 200) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
+            AFC_clm.append(np.where((np.array(tmp, dtype=float) > 400) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
         for j in range(2,10):
             tmp=[]
             tmp.append(tpw.sel(time=str(i)).tpw.values[j,0:730])
-            IND_clm.append(np.where((np.array(tmp, dtype=float) > 200) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
+            IND_clm.append(np.where((np.array(tmp, dtype=float) > 400) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
         for j in range(10,23):
             tmp=[]
             tmp.append(tpw.sel(time=str(i)).tpw.values[j,0:730])
-            AMS_clm.append(np.where((np.array(tmp, dtype=float) > 200) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
+            AMS_clm.append(np.where((np.array(tmp, dtype=float) > 400) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
         for j in range(23,26):
             tmp=[]
             tmp.append(tpw.sel(time=str(i)).tpw.values[j,0:730])
-            MC_clm.append(np.where((np.array(tmp, dtype=float) > 200) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
+            MC_clm.append(np.where((np.array(tmp, dtype=float) > 400) | (np.array(tmp, dtype=float) <=0), np.nan, np.array(tmp)))
 
     IND_clm=np.nanmean(np.array(IND_clm),axis=0)
     AFC_clm=np.nanmean(np.array(AFC_clm),axis=0)
